@@ -1,0 +1,6 @@
+ACLineStatus: 1
+BatteryFlag: 128
+BatteryLifePercent: 255
+Reserved1: 0
+BatteryLifeTime: -1
+BatteryFullLifeTime: -1

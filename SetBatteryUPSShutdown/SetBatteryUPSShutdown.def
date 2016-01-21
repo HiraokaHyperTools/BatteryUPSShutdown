@@ -1,0 +1,7 @@
+; SetBatteryUPSShutdown.def : DLL のモジュール パラメータを宣言します。
+
+LIBRARY      "SetBatteryUPSShutdown"
+
+EXPORTS
+    ; 明示的なエクスポートはここへ記述できます
+    CPlApplet

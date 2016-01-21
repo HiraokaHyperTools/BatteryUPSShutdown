@@ -1,0 +1,14 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'SettingBatteryUPSShutdown'
+		{
+			val DllSurrogate = s ''
+		}
+		'SettingBatteryUPSShutdown.DLL'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

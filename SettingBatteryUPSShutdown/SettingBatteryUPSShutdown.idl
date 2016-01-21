@@ -1,0 +1,45 @@
+// SettingBatteryUPSShutdown.idl : SettingBatteryUPSShutdown の IDL ソース
+//
+
+// このファイルは、タイプ ライブラリ (SettingBatteryUPSShutdown.tlb) およびマーシャリング コードを
+// 作成するために MIDL ツールによって処理されます。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(C6FD6E87-E212-4B5C-8793-E68AEE2FEDEF),
+	dual,
+	nonextensible,
+	helpstring("ICfgUPS interface"),
+	pointer_default(unique)
+]
+interface ICfgUPS : IDispatch{
+	[propget, id(1), helpstring("Property FirstSecs")] HRESULT FirstSecs([out, retval] LONG* pVal);
+	[propput, id(1), helpstring("Property FirstSecs")] HRESULT FirstSecs([in] LONG newVal);
+	[propget, id(2), helpstring("Property SecondsSecs")] HRESULT SecondsSecs([out, retval] LONG* pVal);
+	[propput, id(2), helpstring("Property SecondsSecs")] HRESULT SecondsSecs([in] LONG newVal);
+	[propget, id(3), helpstring("Property Servers")] HRESULT Servers([out, retval] BSTR* pVal);
+	[propput, id(3), helpstring("Property Servers")] HRESULT Servers([in] BSTR newVal);
+	[propget, id(4), helpstring("Property CurrentStatus")] HRESULT CurrentStatus([out, retval] LONG* pVal);
+	[propget, id(5), helpstring("Property Cmdline")] HRESULT Cmdline([out, retval] BSTR* pVal);
+	[propput, id(5), helpstring("Property Cmdline")] HRESULT Cmdline([in] BSTR newVal);
+};
+[
+	uuid(DC996B94-8DE6-434B-832B-7693FD276416),
+	version(1.0),
+	helpstring("SettingBatteryUPSShutdown 1.0 type lib")
+]
+library SettingBatteryUPSShutdownLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(705708FB-9418-41C1-B348-E7919D5D9D42),
+		helpstring("CfgUPS Class")
+	]
+	coclass CfgUPS
+	{
+		[default] interface ICfgUPS;
+	};
+};

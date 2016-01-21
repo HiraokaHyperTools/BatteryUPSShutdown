@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestGetSystemPowerStatus", "TestGetSystemPowerStatus\TestGetSystemPowerStatus.vcproj", "{842A87D4-D6C9-45C7-9085-F8198746253B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyBatteryUPSShutdown", "MyBatteryUPSShutdown\MyBatteryUPSShutdown.vcproj", "{59AB83E4-851F-4BE9-919B-74471FD00EE1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC} = {7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SetBatteryUPSShutdown", "SetBatteryUPSShutdown\SetBatteryUPSShutdown.vcproj", "{34B2C3F0-319C-4FDC-AB50-071D7F499167}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC} = {7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SettingBatteryUPSShutdown", "SettingBatteryUPSShutdown\SettingBatteryUPSShutdown.vcproj", "{7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SettingBatteryUPSShutdownPS", "SettingBatteryUPSShutdown\SettingBatteryUPSShutdownPS.vcproj", "{703D00AC-0293-481E-845C-7B967FBE2AD3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC} = {7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{842A87D4-D6C9-45C7-9085-F8198746253B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{842A87D4-D6C9-45C7-9085-F8198746253B}.Debug|x64.ActiveCfg = Debug|x64
+		{842A87D4-D6C9-45C7-9085-F8198746253B}.Release|Win32.ActiveCfg = Release|Win32
+		{842A87D4-D6C9-45C7-9085-F8198746253B}.Release|x64.ActiveCfg = Release|x64
+		{59AB83E4-851F-4BE9-919B-74471FD00EE1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{59AB83E4-851F-4BE9-919B-74471FD00EE1}.Debug|Win32.Build.0 = Debug|Win32
+		{59AB83E4-851F-4BE9-919B-74471FD00EE1}.Debug|x64.ActiveCfg = Debug|x64
+		{59AB83E4-851F-4BE9-919B-74471FD00EE1}.Debug|x64.Build.0 = Debug|x64
+		{59AB83E4-851F-4BE9-919B-74471FD00EE1}.Release|Win32.ActiveCfg = Release|Win32
+		{59AB83E4-851F-4BE9-919B-74471FD00EE1}.Release|Win32.Build.0 = Release|Win32
+		{59AB83E4-851F-4BE9-919B-74471FD00EE1}.Release|x64.ActiveCfg = Release|x64
+		{59AB83E4-851F-4BE9-919B-74471FD00EE1}.Release|x64.Build.0 = Release|x64
+		{34B2C3F0-319C-4FDC-AB50-071D7F499167}.Debug|Win32.ActiveCfg = Debug|Win32
+		{34B2C3F0-319C-4FDC-AB50-071D7F499167}.Debug|Win32.Build.0 = Debug|Win32
+		{34B2C3F0-319C-4FDC-AB50-071D7F499167}.Debug|x64.ActiveCfg = Debug|x64
+		{34B2C3F0-319C-4FDC-AB50-071D7F499167}.Debug|x64.Build.0 = Debug|x64
+		{34B2C3F0-319C-4FDC-AB50-071D7F499167}.Release|Win32.ActiveCfg = Release|Win32
+		{34B2C3F0-319C-4FDC-AB50-071D7F499167}.Release|Win32.Build.0 = Release|Win32
+		{34B2C3F0-319C-4FDC-AB50-071D7F499167}.Release|x64.ActiveCfg = Release|x64
+		{34B2C3F0-319C-4FDC-AB50-071D7F499167}.Release|x64.Build.0 = Release|x64
+		{7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC}.Debug|Win32.Build.0 = Debug|Win32
+		{7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC}.Debug|x64.ActiveCfg = Debug|x64
+		{7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC}.Debug|x64.Build.0 = Debug|x64
+		{7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC}.Release|Win32.ActiveCfg = Release|Win32
+		{7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC}.Release|Win32.Build.0 = Release|Win32
+		{7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC}.Release|x64.ActiveCfg = Release|x64
+		{7DFA20C8-42F6-4E26-AA64-1686ECA7B2AC}.Release|x64.Build.0 = Release|x64
+		{703D00AC-0293-481E-845C-7B967FBE2AD3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{703D00AC-0293-481E-845C-7B967FBE2AD3}.Debug|x64.ActiveCfg = Debug|Win32
+		{703D00AC-0293-481E-845C-7B967FBE2AD3}.Release|Win32.ActiveCfg = Release|Win32
+		{703D00AC-0293-481E-845C-7B967FBE2AD3}.Release|x64.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

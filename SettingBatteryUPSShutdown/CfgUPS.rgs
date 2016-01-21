@@ -1,0 +1,32 @@
+HKCR
+{
+	SettingBatteryUPSShutdown.CfgUPS.1 = s 'CfgUPS Class'
+	{
+		CLSID = s '{705708FB-9418-41C1-B348-E7919D5D9D42}'
+	}
+	SettingBatteryUPSShutdown.CfgUPS = s 'CfgUPS Class'
+	{
+		CLSID = s '{705708FB-9418-41C1-B348-E7919D5D9D42}'
+		CurVer = s 'SettingBatteryUPSShutdown.CfgUPS.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {705708FB-9418-41C1-B348-E7919D5D9D42} = s 'CfgUPS Class'
+		{
+			ProgID = s 'SettingBatteryUPSShutdown.CfgUPS.1'
+			VersionIndependentProgID = s 'SettingBatteryUPSShutdown.CfgUPS'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{DC996B94-8DE6-434B-832B-7693FD276416}'
+			Elevation
+			{
+				val Enabled = d 1
+			}
+			val LocalizedString = s '@%MODULE%,-102'
+		}
+	}
+}
