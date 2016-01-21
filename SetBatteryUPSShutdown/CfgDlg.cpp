@@ -76,7 +76,9 @@ BOOL CCfgDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
-	m_btnOK.SendMessage(BCM_SETSHIELD, 0, TRUE);
+	const UINT _BCM_SETSHIELD = 0x160C;
+
+	m_btnOK.SendMessage(_BCM_SETSHIELD, 0, TRUE);
 
 	m_wndSpin1.SetRange32(0, 65535);
 	m_wndSpin2.SetRange32(0, 65535);
@@ -101,9 +103,21 @@ BOOL CCfgDlg::OnInitDialog()
 	// 例外 : OCX プロパティ ページは必ず FALSE を返します。
 }
 
+typedef struct _tagBIND_OPTS3 {
+  DWORD        cbStruct;
+  DWORD        grfFlags;
+  DWORD        grfMode;
+  DWORD        dwTickCountDeadline;
+  DWORD        dwTrackFlags;
+  DWORD        dwClassContext;
+  LCID         locale;
+  COSERVERINFO *pServerInfo;
+  HWND         hwnd;
+} _BIND_OPTS3, *_LPBIND_OPTS3;
+
 HRESULT CoCreateInstanceAsAdmin(HWND hwnd, REFCLSID rclsid, REFIID riid, __out void ** ppv)
 {
-    BIND_OPTS3 bo;
+    _BIND_OPTS3 bo;
     WCHAR  wszCLSID[50];
     WCHAR  wszMonikerName[300];
 
@@ -115,8 +129,29 @@ HRESULT CoCreateInstanceAsAdmin(HWND hwnd, REFCLSID rclsid, REFIID riid, __out v
     bo.cbStruct = sizeof(bo);
     bo.hwnd = hwnd;
     bo.dwClassContext  = CLSCTX_LOCAL_SERVER;
-    return CoGetObject(wszMonikerName, &bo, riid, ppv);
+    return CoGetObject(wszMonikerName, reinterpret_cast<LPBIND_OPTS>(&bo), riid, ppv);
 }
+
+#ifndef IID_PPV_ARGS
+//  IID_PPV_ARGS(ppType)
+//      ppType is the variable of type IType that will be filled
+//
+//      RESULTS in:  IID_IType, ppvType
+//      will create a compiler error if wrong level of indirection is used.
+//
+extern "C++"
+{
+    template<typename T> void** IID_PPV_ARGS_Helper(T** pp)
+    {
+        // make sure everyone derives from IUnknown
+        static_cast<IUnknown*>(*pp);
+       
+        return reinterpret_cast<void**>(pp);
+    }
+}
+ 
+#define IID_PPV_ARGS(ppType) __uuidof(**(ppType)), IID_PPV_ARGS_Helper(ppType)
+#endif
 
 void CCfgDlg::OnOK() {
 	if (!UpdateData())

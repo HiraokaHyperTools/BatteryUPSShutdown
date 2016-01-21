@@ -3,18 +3,18 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 7.00.0555 */
-/* at Wed Feb 15 14:11:32 2012
+ /* File created by MIDL compiler version 6.00.0366 */
+/* at Thu Jan 21 15:06:07 2016
  */
 /* Compiler settings for .\SettingBatteryUPSShutdown.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
+    Oicf, W1, Zp8, env=Win32 (32b run)
     protocol : dce , ms_ext, c_ext
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
          __declspec(uuid()), __declspec(selectany), __declspec(novtable)
          DECLSPEC_UUID(), MIDL_INTERFACE()
 */
-/* @@MIDL_FILE_HEADING(  ) */
+//@@MIDL_FILE_HEADING(  )
 
 #pragma warning( disable: 4049 )  /* more than 64k source lines */
 
@@ -71,6 +71,8 @@ typedef struct CfgUPS CfgUPS;
 extern "C"{
 #endif 
 
+void * __RPC_USER MIDL_user_allocate(size_t);
+void __RPC_USER MIDL_user_free( void * ); 
 
 #ifndef __ICfgUPS_INTERFACE_DEFINED__
 #define __ICfgUPS_INTERFACE_DEFINED__
@@ -125,8 +127,7 @@ EXTERN_C const IID IID_ICfgUPS;
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
             ICfgUPS * This,
             /* [in] */ REFIID riid,
-            /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            /* [iid_is][out] */ void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             ICfgUPS * This);
@@ -148,7 +149,7 @@ EXTERN_C const IID IID_ICfgUPS;
             ICfgUPS * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
-            /* [range][in] */ UINT cNames,
+            /* [in] */ UINT cNames,
             /* [in] */ LCID lcid,
             /* [size_is][out] */ DISPID *rgDispId);
         
@@ -213,60 +214,168 @@ EXTERN_C const IID IID_ICfgUPS;
 
 
 #define ICfgUPS_QueryInterface(This,riid,ppvObject)	\
-    ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
+    (This)->lpVtbl -> QueryInterface(This,riid,ppvObject)
 
 #define ICfgUPS_AddRef(This)	\
-    ( (This)->lpVtbl -> AddRef(This) ) 
+    (This)->lpVtbl -> AddRef(This)
 
 #define ICfgUPS_Release(This)	\
-    ( (This)->lpVtbl -> Release(This) ) 
+    (This)->lpVtbl -> Release(This)
 
 
 #define ICfgUPS_GetTypeInfoCount(This,pctinfo)	\
-    ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
+    (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo)
 
 #define ICfgUPS_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
-    ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
+    (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo)
 
 #define ICfgUPS_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
-    ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
+    (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)
 
 #define ICfgUPS_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
-    ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
+    (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)
 
 
 #define ICfgUPS_get_FirstSecs(This,pVal)	\
-    ( (This)->lpVtbl -> get_FirstSecs(This,pVal) ) 
+    (This)->lpVtbl -> get_FirstSecs(This,pVal)
 
 #define ICfgUPS_put_FirstSecs(This,newVal)	\
-    ( (This)->lpVtbl -> put_FirstSecs(This,newVal) ) 
+    (This)->lpVtbl -> put_FirstSecs(This,newVal)
 
 #define ICfgUPS_get_SecondsSecs(This,pVal)	\
-    ( (This)->lpVtbl -> get_SecondsSecs(This,pVal) ) 
+    (This)->lpVtbl -> get_SecondsSecs(This,pVal)
 
 #define ICfgUPS_put_SecondsSecs(This,newVal)	\
-    ( (This)->lpVtbl -> put_SecondsSecs(This,newVal) ) 
+    (This)->lpVtbl -> put_SecondsSecs(This,newVal)
 
 #define ICfgUPS_get_Servers(This,pVal)	\
-    ( (This)->lpVtbl -> get_Servers(This,pVal) ) 
+    (This)->lpVtbl -> get_Servers(This,pVal)
 
 #define ICfgUPS_put_Servers(This,newVal)	\
-    ( (This)->lpVtbl -> put_Servers(This,newVal) ) 
+    (This)->lpVtbl -> put_Servers(This,newVal)
 
 #define ICfgUPS_get_CurrentStatus(This,pVal)	\
-    ( (This)->lpVtbl -> get_CurrentStatus(This,pVal) ) 
+    (This)->lpVtbl -> get_CurrentStatus(This,pVal)
 
 #define ICfgUPS_get_Cmdline(This,pVal)	\
-    ( (This)->lpVtbl -> get_Cmdline(This,pVal) ) 
+    (This)->lpVtbl -> get_Cmdline(This,pVal)
 
 #define ICfgUPS_put_Cmdline(This,newVal)	\
-    ( (This)->lpVtbl -> put_Cmdline(This,newVal) ) 
+    (This)->lpVtbl -> put_Cmdline(This,newVal)
 
 #endif /* COBJMACROS */
 
 
 #endif 	/* C style interface */
 
+
+
+/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE ICfgUPS_get_FirstSecs_Proxy( 
+    ICfgUPS * This,
+    /* [retval][out] */ LONG *pVal);
+
+
+void __RPC_STUB ICfgUPS_get_FirstSecs_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE ICfgUPS_put_FirstSecs_Proxy( 
+    ICfgUPS * This,
+    /* [in] */ LONG newVal);
+
+
+void __RPC_STUB ICfgUPS_put_FirstSecs_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE ICfgUPS_get_SecondsSecs_Proxy( 
+    ICfgUPS * This,
+    /* [retval][out] */ LONG *pVal);
+
+
+void __RPC_STUB ICfgUPS_get_SecondsSecs_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE ICfgUPS_put_SecondsSecs_Proxy( 
+    ICfgUPS * This,
+    /* [in] */ LONG newVal);
+
+
+void __RPC_STUB ICfgUPS_put_SecondsSecs_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE ICfgUPS_get_Servers_Proxy( 
+    ICfgUPS * This,
+    /* [retval][out] */ BSTR *pVal);
+
+
+void __RPC_STUB ICfgUPS_get_Servers_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE ICfgUPS_put_Servers_Proxy( 
+    ICfgUPS * This,
+    /* [in] */ BSTR newVal);
+
+
+void __RPC_STUB ICfgUPS_put_Servers_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE ICfgUPS_get_CurrentStatus_Proxy( 
+    ICfgUPS * This,
+    /* [retval][out] */ LONG *pVal);
+
+
+void __RPC_STUB ICfgUPS_get_CurrentStatus_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id][propget] */ HRESULT STDMETHODCALLTYPE ICfgUPS_get_Cmdline_Proxy( 
+    ICfgUPS * This,
+    /* [retval][out] */ BSTR *pVal);
+
+
+void __RPC_STUB ICfgUPS_get_Cmdline_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
+
+
+/* [helpstring][id][propput] */ HRESULT STDMETHODCALLTYPE ICfgUPS_put_Cmdline_Proxy( 
+    ICfgUPS * This,
+    /* [in] */ BSTR newVal);
+
+
+void __RPC_STUB ICfgUPS_put_Cmdline_Stub(
+    IRpcStubBuffer *This,
+    IRpcChannelBuffer *_pRpcChannelBuffer,
+    PRPC_MESSAGE _pRpcMessage,
+    DWORD *_pdwStubPhase);
 
 
 

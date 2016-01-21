@@ -409,7 +409,7 @@
 					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="mc.exe -u -U $(InputPath)"
+						CommandLine="mc.exe -u -U $(InputPath)&#x0D;&#x0A;"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -417,10 +417,14 @@
 					>
 					<Tool
 						Name="VCCustomBuildTool"
-						CommandLine="mc.exe -u -U $(InputPath)"
+						CommandLine="mc.exe -u -U $(InputPath)&#x0D;&#x0A;"
 						Outputs="MSG00409.bin;MSG00411.bin"
 					/>
 				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\evt.rc"
+				>
 			</File>
 			<File
 				RelativePath=".\MSG00409.bin"

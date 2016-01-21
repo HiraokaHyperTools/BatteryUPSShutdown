@@ -2,7 +2,7 @@
  // This is the header section.
  // The following are message definitions.
 //
-//  Values are 32 bit values laid out as follows:
+//  Values are 32 bit values layed out as follows:
 //
 //   3 3 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1
 //   1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0
@@ -50,7 +50,7 @@
 //
 // MessageText:
 //
-// Primary timer started. It counts on shutdown notice.
+//  Primary timer started. It counts on shutdown notice.
 //
 #define MSG_UPS_TIMER1_STARTED           ((DWORD)0x00020001L)
 
@@ -59,7 +59,7 @@
 //
 // MessageText:
 //
-// Primary timer failed to start.
+//  Primary timer failed to start.
 //
 #define MSG_UPS_TIMER1_FAILED            ((DWORD)0x80020002L)
 
@@ -68,7 +68,7 @@
 //
 // MessageText:
 //
-// Command line launched: %1
+//  Command line launched: %1
 //
 #define MSG_UPS_CMDLINE_LAUNCHED         ((DWORD)0x00020002L)
 
@@ -77,7 +77,7 @@
 //
 // MessageText:
 //
-// Command line failed to launch: %1
+//  Command line failed to launch: %1
 //
 #define MSG_UPS_CMDLINE_FAILED           ((DWORD)0x80020003L)
 
@@ -86,7 +86,7 @@
 //
 // MessageText:
 //
-// Shutdown notice initiated, PC: %1
+//  Shutdown notice initiated, PC: %1
 //
 #define MSG_UPS_SHUTDOWN_INITED          ((DWORD)0x00020004L)
 
@@ -95,7 +95,7 @@
 //
 // MessageText:
 //
-// Shutdown notice failed, PC: %1 (%2)
+//  Shutdown notice failed, PC: %1 (%2)
 //
 #define MSG_UPS_SHUTDOWN_FAILED          ((DWORD)0x80020005L)
 
